@@ -66,13 +66,14 @@
 
 ;; Org-roam
 (setq org-roam-directory "~/Projects/MyLife/")
-(setq org-roam-index-file "~/Projects/MyLife/index.org")
+(setq org-roam-index-file "~/Projects/MyLife/me.org")
 (setq org-roam-tag-sources `(prop last-directory))
 
 ;; Org-journal
 (require `org-journal)
 (setq org-journal-dir "~/Projects/MyLife/journal/")
-(setq org-journal-date-prefix "#+TITLE: ")
+(setq org-journal-file-header "#+TITLE: \n")
+(setq org-journal-file-type 'monthly)
 (setq org-journal-file-format "%Y-%m-%d.org")
 (setq org-journal-date-format "%B %d, %Y (%A)")
 
