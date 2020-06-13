@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "monospace" :size 14))
+(setq doom-font (font-spec :family "Hack" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -30,6 +30,8 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
+
+(setq org-hide-emphasis-markers t)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -67,7 +69,19 @@
 ;; Org-roam
 (setq org-roam-directory "~/Projects/MyLife/")
 (setq org-roam-index-file "~/Projects/MyLife/me.org")
-(setq org-roam-tag-sources `(prop last-directory))
+(setq org-roam-tag-sources `(prop all-directories))
+
+(setq org-roam-capture-templates
+      '(("n" "notes" plain (function org-roam--capture-get-point)
+         "%?"
+         :file-name "notes/${slug}"
+         :head "#+TITLE: ${title}\ntags::"
+         :unnarrowed t)
+        ("j" "journal tag" plain (function org-roam--capture-get-point)
+         "%?"
+         :file-name "journal/tags/${slug}"
+         :head "#+TITLE: ${title}\ntags::"
+         :unnarrowed t)))
 
 ;; Org-journal
 (require `org-journal)
