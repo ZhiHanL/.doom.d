@@ -66,6 +66,7 @@
   (setq org-log-done 'time)
   (setq org-startup-align-all-tables t))
 
+
 ;; Org-roam
 (setq org-roam-directory "~/Projects/MyLife/")
 (setq org-roam-index-file "~/Projects/MyLife/me.org")
@@ -113,3 +114,6 @@
 (setq deft-directory "~/Projects/MyLife/")
 (setq deft-extensions '("org"))
 (setq deft-recursive t)
+
+;; Avy
+(setq avy-timeout-seconds 0.2)
