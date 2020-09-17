@@ -51,14 +51,11 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-;; GDScript
-(require 'gdscript-mode)
-
 ;; Org-mode
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 
-(setq org-directory "~/Projects/MyLife/org/")
+(setq org-directory "/mnt/c/Users/ZhiHa/GoogleDrive/HomeBase/")
 (setq org-startup-folded `content)
 
 (after! org
@@ -68,8 +65,7 @@
 
 
 ;; Org-roam
-(setq org-roam-directory "~/Projects/MyLife/")
-(setq org-roam-index-file "~/Projects/MyLife/me.org")
+(setq org-roam-directory "/mnt/c/Users/ZhiHa/GoogleDrive/HomeBase/")
 (setq org-roam-tag-sources `(prop all-directories))
 
 (setq org-roam-capture-templates
@@ -86,7 +82,7 @@
 
 ;; Org-journal
 (require `org-journal)
-(setq org-journal-dir "~/Projects/MyLife/journal/")
+(setq org-journal-dir "/mnt/c/Users/ZhiHa/GoogleDrive/HomeBase/journal/")
 (setq org-journal-file-header "#+TITLE: \n")
 (setq org-journal-file-type 'monthly)
 (setq org-journal-file-format "%Y-%m-%d.org")
@@ -108,12 +104,18 @@
 
 ;; Org-roam-server
 (use-package org-roam-server
-  :load-path "~/Projects/MyLife/roam_server/")
+  :load-path "/mnt/c/Users/ZhiHa/GoogleDrive/HomeBase/roam_server/")
 
 ;; Deft
-(setq deft-directory "~/Projects/MyLife/")
+(setq deft-directory "/mnt/c/Users/ZhiHa/GoogleDrive/HomeBase/")
 (setq deft-extensions '("org"))
 (setq deft-recursive t)
 
 ;; Avy
 (setq avy-timeout-seconds 0.2)
+
+;; Org Encrypt
+(map! :leader
+      (:prefix ("e" . "encryption") ;; org-journal bindings
+        :desc "Encrypt Entry" "e" #'org-encrypt-entry
+        :desc "Decrypt Entry" "d" #'org-decrypt-entry))
