@@ -119,3 +119,8 @@
       (:prefix ("e" . "encryption") ;; org-journal bindings
         :desc "Encrypt Entry" "e" #'org-encrypt-entry
         :desc "Decrypt Entry" "d" #'org-decrypt-entry))
+
+(setq python-shell-interpreter "python3")
+
+(setq-default epa-file-cache-passphrase-for-symmetric-encryption t)
+
